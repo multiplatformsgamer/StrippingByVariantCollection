@@ -70,7 +70,7 @@ namespace UTJ
                 this.keywordInfos = new List<ShaderKeyword>(words.Length);
                 for (int i = 0; i < words.Length; ++i)
                 {
-                    if (string.IsNullOrEmpty(words[i])) { continue; }
+                    if (string.IsNullOrEmpty(words[i]) || sh == null) { continue; }
 #if UNITY_2019 || UNITY_2019_3_OR_NEWER
                     ShaderKeyword shKeyword = new ShaderKeyword(sh, words[i]);
 #else
